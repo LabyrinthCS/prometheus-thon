@@ -1,0 +1,28 @@
+//put your setup code here
+speaker1.write(0);
+led1.off();
+
+//put your main code here
+
+//Check vibration levels
+
+Serial.println("Vibration level: ");
+Serial.println(micro1.read());
+delay(1000);
+
+
+/*
+My phone vibration levels b/w 83 to 90
+For prediction of any system, always keep alarm level lower than the actual level.
+*/
+
+if ( micro1.read() >= 75 ) {
+    speaker1.write(500);
+    led1.setRGB(0,0,155);
+    delay(2000);
+}
+else {
+    speaker1.write(0);
+    led1.off();
+    delay(2000);
+}

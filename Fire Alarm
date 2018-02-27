@@ -1,0 +1,22 @@
+//put your setup code here
+
+led1.off();
+speaker1.write(0);
+
+//put your main code here
+
+//Disp temp
+Serial.print("Temperature is : ");
+Serial.println(temp.read());
+delay(1000);
+
+//Fire Alarm
+if ( temp.read() >= 31.50 ) {
+    led1.setRGB(150,0,0);
+    speaker1.write(500);
+}
+
+else {
+    led1.off();
+    speaker1.write(0);
+}
