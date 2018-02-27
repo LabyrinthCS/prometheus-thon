@@ -1,0 +1,14 @@
+//put your main code here
+//put your main code here
+ if(ldr1.read()<27){
+    delay(300);
+    if(ldr1.read()<27){
+        delay(1000);
+        if(ldr1.read()<27)
+            led1.setRGB(200,200,200
+            );
+        
+    }
+  }
+  else 
+    led1.off();
