@@ -1,0 +1,4 @@
+SMART CITES IoT Hackathon
+* Runway Management System -- for smart landing of planes.
+* Smart Street Lights -- to save electricity and identity dead light.
+* Waste Management -- to manage waste and garbage.
