@@ -1,31 +1,35 @@
-int led[] = {4,5,6,7,8,9,10,11,12,13};
-int pir = 3;
-int buzz = 2;
+int ir1 = 3;
+int ir2 = 2;
+
+int led1 = 7;
+int led2 = 6;
+
+int proxy1 = 0;
+int proxy2 = 0;
 
 void setup() {
-  // put your setup code here, to run once:
-  pinMode(pir, INPUT);
-  pinMode(buzz, OUTPUT);
-  for (int i = 0; i < 10; i++) {
-    digitalWrite(led[i], LOW);
-  }
+  pinMode(ir1, INPUT);
+  pinMode(ir2, INPUT);
+  pinMode(led1, OUTPUT);
+  pinMode(led2, OUTPUT);
 }
 
 void loop() {
-  // put your main code here, to run repeatedly:
-  int val = digitalRead(pir);
-  if (val == HIGH) {
-    digitalWrite(buzz, HIGH);
-    for (int i = 0; i < 10; i+=1) {
-      digitalWrite(led[i], HIGH);
-      delay(100);
-      digitalWrite(led[i], LOW);
-    }
-    /*digitalWrite(led[0], HIGH);
-    digitalWrite(led[0], HIGH);
-    digitalWrite(led[0], HIGH);*/
+  proxy1 = digitalRead(ir1);
+  proxy2 = digitalRead(ir2);
+
+  if (proxy1 == LOW) {
+    digitalWrite(led1, LOW);
+    digitalWrite(led2, HIGH);
   } else {
-    //digitalWrite(led, LOW);
-    digitalWrite(buzz, LOW);
+    digitalWrite(led1, LOW);
+    digitalWrite(led2, LOW);
+  } if (proxy2 == LOW) {
+    digitalWrite(led2, LOW);
+    digitalWrite(led1, HIGH);
+  } else {
+    digitalWrite(led1, LOW);
+    digitalWrite(led2, LOW);
   }
 }
+

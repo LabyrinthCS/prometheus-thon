@@ -4,7 +4,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 from drawnow import *
 
-arduinoDataStream = serial.Serial('/dev/ttyACM1',9600)
+arduinoDataStream = serial.Serial('/dev/ttyACM0',9600)
 plt.ion() # indicate matplotlib that we are graphing live
 
 tempc = []
