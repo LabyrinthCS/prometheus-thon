@@ -1,0 +1,15 @@
+//put your setup code here
+led1.off();
+led2.off();
+led3.off();
+delay(2000);
+
+//put your global code here
+float p,i;
+
+//put your main code here
+p = bright1.read();
+i = 1/p;
+led1.setRGB(0,0,i*2.55);
+led2.setRGB(0,0,i*2.55);
+led3.setRGB(0,0,i*2.55);
