@@ -1,0 +1,191 @@
+body
+{
+margin:0;
+padding:0;
+background:url(grass.jpg);
+background-size:cover;
+
+font-family:sans-serif;
+}
+.login-box{
+width:320px;
+height:420px;
+background:rgba(0, 0, 0, 0.5);
+color:#fff;
+top:25%;
+left:38%;
+position:absolute;
+transfrom:translate(-50%,-50%);
+box-sizing:border-box;
+padding:70px 30px;
+}
+.login{
+width:100px;
+height:100px;
+border-radius:50%;
+position:absolute;
+top:-50px;
+left: calc(50% - 50px);
+ }
+h1
+{
+margin: 0px;
+padding: 0 0 20px;
+text-align: center;
+font-size: 20px;
+}
+.login-box p{
+margin:0;
+padding:0px;
+font-weight:bold;
+}
+.login-box input{
+width:100%;
+margin-bottom:20px
+}
+.login-box input[type="text"],input[type="password"]
+{
+border:none;
+border-bottom:1px solid #fff;
+background:transparent;
+outline:none;
+height: 40px;
+color:#fff;
+font-size:16px;
+}
+.login box input[type="submit"]
+{
+border:none;
+outline:none;
+height:40px;
+background:#1c8adb;
+color:#fff;
+font-size:18px;
+border-radius:20px;
+}
+
+
+.login box input[type="submit"]:hover
+{
+cursor :pointer;
+background:#39dc79;
+color:#000;
+}
+.login-box a
+{
+text-decoration:none;
+font-size:14px;
+color:#fff;
+}
+.login-box a:hover
+{
+color:#39dc79;
+}
+.logo{
+	color:#000000;
+	float:left;
+	padding:12px 38px 17px 25px;
+	font-size:32px;
+	font-weight:bold;
+	font-style:italic;
+	font-family:"Buxton Sketch";
+	background-color:#ffffff
+}
+.logo>a{
+	text-decoration:none;
+	color:#000000;
+}
+.menu {
+    border: none;
+    border: 0px;
+    margin: 0px;
+    padding: 15px 0px 18px 0px;
+    font-family: verdana,geneva,arial,helvetica,sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    
+	
+}
+
+.menu ul {
+    background: #0C7DBF
+    height:43px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+	
+}
+
+.menu li {
+    float: left;
+    padding: 0px 2px 0px 2px;
+}
+
+.menu li a {
+    color: #ffffff;
+    display: block;
+    font-weight: bold;
+    line-height: 43px;
+    padding: 0px 18px 0 30px;
+    text-align: center;
+    text-decoration: none;
+	background-color#ffffff
+}
+
+.menu li a:hover {
+    color: #000000;
+    text-decoration: none;
+}
+
+.menu li ul {
+    background: #e0e0e0;
+    border-left: 2px solid #a80329;
+    border-right: 2px solid #a80329;
+    border-bottom: 2px solid #a80329;
+    display: none;
+    height: auto;
+    filter: alpha(opacity=95);
+    opacity: 0.95;
+    position: absolute;
+    width: 225px;
+    z-index: 200;
+/*top:1em;
+/*left:0;*/
+}
+
+.menu li:hover ul {
+    display: block;
+}
+
+.menu li li {
+    display: block;
+    float: none;
+    padding: 0px;
+    width: 225px;
+}
+
+.menu li ul a {
+    display: block;
+    font-size: 12px;
+    font-style: normal;
+    padding: 0px 10px 0px 15px;
+    text-align: left;
+}
+
+.menu li ul a:hover {
+    background: #949494;
+    color: #000000;
+    opacity: 1.0;
+    filter: alpha(opacity=100);
+}
+
+.menu p {
+    clear: left;
+}
+
+.menu #current {
+    background: url(https://1.bp.blogspot.com/-Z9bi1D4dtH8/T7zWalpDEWI/AAAAAAAABzI/iXhXlizOKO8/s1600/helperblogger.com-current-bg.gif) top left repeat-x;
+    color: #ffffff;
+}
+
+					

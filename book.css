@@ -1,0 +1,38 @@
+body
+{
+margin:0;
+padding:0;
+font-family:'Arial',serif;
+}
+.nav{
+background-color:#595959;
+color:#ffffff;
+list-style:none;
+text-align:right;
+padding:20px 0 30px 0;
+}
+.nav>li {
+	display:inline-block;
+	padding: 0 25px 0 25px;
+	font-size: 12px;
+}
+.nav>li>a{
+text-decoration:none;
+color:#ffffff;
+}
+.nav>li>a:hover{
+color:#c1c1c1;
+}
+.logo{
+	color:#ffffff;
+	float:left;
+	padding-left:25px;
+	font-size:30px;
+	font-weight:bold;
+	font-style:italic;
+	font-family:"Ar Decode";
+}
+.logo>a{
+	text-decoration:none;
+	color:#ffffff;
+}
