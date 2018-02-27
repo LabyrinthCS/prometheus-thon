@@ -1,0 +1,206 @@
+import java.io.*;
+import java.util.*;
+import java.math.*;
+
+
+	/*-----------------------------*/
+	/*							                */
+	/*			  FIELDS		   */
+	/*							   */
+	/*-----------------------------*/
+
+	/*	NESTED CLASS  */
+
+class DecisionTree {
+
+
+	public class BinTree {
+
+		public int nodeID;
+		public String condition = null;
+		public DecisionTree yesBranch = null;
+		public DecisionTree noBranch = null;
+
+		/*	CONSTRUCTOR	  */
+
+		public BinTree(int newNodeID, String newCondition) {
+
+			nodeID = newNodeID;
+			condition = newCondition;
+		}
+	}
+
+	/*	OTHER FIELDS  */
+
+	static BufferedReader resumeCapture = new BufferedReader(new InputStreamReader(System.in));
+
+	BinTree rootNode = null;
+
+	/*----------------------*/
+	/*						*/
+	/*	   CONSTRUCTORS		*/
+	/*						*/
+	/*----------------------*/
+
+	/*  Default Constructor  */
+
+	public DecisionTree() {
+
+	}
+
+	/*----------------------*/
+	/*						*/
+	/*TREE BUILDING METHODS */
+	/*						*/
+	/*----------------------*/
+
+	/*  CREATE ROOT NODE  */
+
+	public void createRoot(int newNodeID, String newCondition) {
+
+		rootNode = new BinTree(newNodeID, newCondition);
+	}
+
+	/*  ADD YES NODE  */
+
+	public void addYesNode(int existingNodeID, int newNodeID, String newCondition) {
+
+		// If no root, do nothing
+
+		if (rootNode == null) {
+
+			return;
+		}
+
+		// Search tree
+
+		searchTreeAndAddYesNode(rootNode, existingNodeID, newNodeID, newCondition); 
+	}
+
+	/* SEARCH TREE AND ADD YES NODE */
+
+	private boolean searchTreeAndAddYesNode(BinTree currentNode, int existingNodeID, int newNodeID, String newCondition) {
+
+		if (currentNode.nodeID == existingNodeID) {
+
+			// Found node
+
+			if (currentNode.yesBranch == null) {
+
+				currentNode.yesBranch = new BinTree(newNodeID, newCondition);
+			
+			} else {
+
+				currentNode.yesBranch = new BinTree(newNodeID, newCondition);		
+			}
+
+			return(true);
+		
+		} else {
+
+			// Try yes branch if it exists
+
+			if (currentNode.yesBranch != null) {
+
+				return(searchTreeAndAddYesNode(currentNode.noBranch, existingNodeID, newNodeID, newCCondition));
+			
+			} else {
+
+				// Try no branch if it exists
+
+				if (currentNode.noBranch != null) {
+
+					return(searchTreeAndAddYesNode(currentNode.noBranch, existingNodeID, newNodeID, newCondition));
+				
+				} else {
+
+					return(false);	// Not found here
+				}
+			}
+
+			return(false);	// Not found here
+		}
+ 
+	}
+
+	/* ADD NO NODE */
+
+	public void addNoNode(int existingNodeID, int newNodeID, String newCondition) {
+
+		// If no root node, do nothing
+
+		if (rootNode == null) {
+
+			return;
+		}
+
+		// Search tree
+
+		searchTreeAndAddNoNode(rootNode, existingNodeID, newNodeID, newCondition);
+	}
+
+	/* SEARCH TREE AND ADD NO NODE */
+
+	private boolean searchTreeAndAddNoNode(BinTree currentNode, int existingNodeID, int newNodeID, String newCondition) {
+
+		if (currentNode.nodeID == existingNodeID) {
+
+			// Found node
+
+			if (currentNode.noBranch == null) {
+
+				currentNode.noBranch = new BinTree(newNodeID, newCondition);
+			
+			} else {
+
+				currentNode.noBranch = new BinTree(newNodeID, newCondition);
+			}
+
+			return(true);
+		
+		} else {
+
+			// Try yes branch if it exists
+
+			if (currentNode.yesBranch != null) {
+
+				if (searchTreeAndAddNoNode(currentNode.yesBranch, existingNodeID, newNodeID, newCondition)) {
+
+					return(true);
+				
+				} else {
+
+					// Try no branch if it exists
+
+					if (currentNode.noBranch != null) {
+
+						return(searchTreeAndAddNoNode(currentNode.noBranch, existingNodeID, newNodeID, newCondition));
+					
+					} else {
+
+						return(false);	// Not found here
+					}
+				}
+			
+			} else {
+
+				return(false);	// Not found here
+			} 
+		}
+	}
+
+
+	/*-----------------------------------------------*/
+	/*												 */
+	/*				TREE QUERY METHODS				 */
+	/*												 */
+	/*-----------------------------------------------*/
+
+
+	/*---------------------------------------*/
+	/*										 */
+	/*			TREE OUTPUT METHODS			 */
+	/*										 */
+	/*---------------------------------------*/
+
+}
